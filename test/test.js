@@ -66,3 +66,8 @@ var board = [
   board[4][4] = board[6][4];
   board[6][4] = ' ';
   console.log(board.join('\n'));
+
+console.log(5 + +"5");
+console.log(typeof(5 + +"5"));
+console.log(typeof(parseInt('12')));
+console.log("123"[2]);
