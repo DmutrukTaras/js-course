@@ -38,8 +38,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
 mainBtn.addEventListener('click',function(){
 	timeData = prompt ("Ввеліть дату в форматі YYYY-MM-DD", "");
+	let newtimeData = new Date(Date.parse(timeData));
+	while(isNaN(newtimeData)){
+		timeData = prompt ("Ввеліть дату в форматі YYYY-MM-DD", "");
+		newtimeData = new Date(Date.parse(timeData));
+	}
 	yourBudget = +prompt ("Ваш бюджет на місяць?", "");
-
     while(isNaN(yourBudget) || yourBudget=="" || yourBudget==null){
         yourBudget = +prompt ("Ваш бюджет на місяць?", "");
     }
