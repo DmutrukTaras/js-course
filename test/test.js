@@ -17,8 +17,7 @@ var board = [
   // Двигаем королевскую пешку вперёд на две клетки
   board[4][4] = board[6][4];
   board[6][4] = ' ';
+  
   console.log(board.join('\n'));
 
 
-console.log(typeof(parseInt('12')));
-console.log("123"[2]);
