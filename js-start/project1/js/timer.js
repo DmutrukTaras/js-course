@@ -15,12 +15,12 @@ window.addEventListener('DOMContentLoaded',function(){
                 'hours':hour
             };
 
-            return timer
+            return timer;
     }
 
     function formatDate(t){
         for (let x in t){
-            if(t[x]<10){
+            if(t[x]<10&&t[x]>0){
                 t[x] = '0'+t[x];
             }
         }
@@ -41,7 +41,6 @@ window.addEventListener('DOMContentLoaded',function(){
             hours.textContent = time.hours;
             minutes.textContent = time.minutes;
             seconds.textContent = time.seconds;
-
             if(time.total<0){
                 clearInterval(timerInterval);
                 hours.textContent = '00';
