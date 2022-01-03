@@ -1,7 +1,19 @@
-/* jshint esnext: true */
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
 
-var getContext = () => {
-  console.log(this === window); // => true
-  return this;
-};
-console.log(getContext() === window); // => true
+  get area() {
+    return this.calcArea();
+  }
+
+  calcArea() {
+    return this.height * this.width;
+  }
+}
+
+const square = new Rectangle(10, 10);
+
+console.log(square.area); // 100
+console.log(square.calcArea); // 100
