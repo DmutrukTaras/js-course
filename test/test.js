@@ -15,7 +15,7 @@ inputUa.addEventListener('input', () =>{
     }else{
       inputUsd.value = 'Сталась  помилка';
     }
-  })
+  });
 
 });
 
@@ -33,6 +33,6 @@ inputUsd.addEventListener('input', () =>{
     }else{
       inputUa.value = 'Сталась  помилка';
     }
-  })
+  });
 
 });

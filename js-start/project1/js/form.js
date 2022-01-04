@@ -83,7 +83,7 @@ formContacts.addEventListener('submit', function (event) {
     }
 
     postData(jsonObj,server)
-    .then(() =>{statusMessage.innerHTML = `${massage.loading}`;console.log(massage.loading)})
+    .then(() =>{statusMessage.innerHTML = `${massage.loading}`; console.log(massage.loading);})
     .then(() =>statusMessage.innerHTML = `${massage.success}`)
     .catch(() =>statusMessage.innerHTML = `${massage.failure}`)
     .finally(clearInput(inputsContacts));
