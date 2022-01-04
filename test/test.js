@@ -1,19 +1,38 @@
-class Rectangle {
-  constructor(height, width) {
-    this.height = height;
-    this.width = width;
-  }
+let inputUa = document.getElementById("ua");
+let inputUsd = document.getElementById("usd");
 
-  get area() {
-    return this.calcArea();
-  }
+inputUa.addEventListener('input', () =>{
+  let request = new XMLHttpRequest();
 
-  calcArea() {
-    return this.height * this.width;
-  }
-}
+  request.open('GET','current.json');
+  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+  request.send();
 
-const square = new Rectangle(10, 10);
+  request.addEventListener('readystatechange', function(){
+    if (request.readyState === 4 && request.status ===200){
+      let data = JSON.parse(request.response);
+      inputUsd.value = inputUa.value/data.usd;
+    }else{
+      inputUsd.value = 'Сталась  помилка';
+    }
+  })
 
-console.log(square.area); // 100
-console.log(square.calcArea); // 100
+});
+
+inputUsd.addEventListener('input', () =>{
+  let request = new XMLHttpRequest();
+  
+  request.open('GET','current.json');
+  request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+  request.send();
+
+  request.addEventListener('readystatechange', function(){
+    if (request.readyState === 4 && request.status ===200){
+      let data = JSON.parse(request.response);
+      inputUa.value = inputUsd.value*data.usd;
+    }else{
+      inputUa.value = 'Сталась  помилка';
+    }
+  })
+
+});
